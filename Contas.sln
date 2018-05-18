@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{5A44D4D2-7EC5-40C4-BE27-82C2975F0BA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{65D58EC0-2FF5-444F-9651-7A0FFBCDEFC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - Infrastructure", "{91EA6C26-CBD5-4B75-8B2C-02FD819DB47F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 - Data", "3.1 - Data", "{B8114060-233A-4D65-BDE5-EEDEEB66713D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2 - CrossCutting", "3.2 - CrossCutting", "{30770071-14EE-4DAB-9E5F-D3EA3628F8BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contas.Domain", "src\Contas.Domain\Contas.Domain.csproj", "{33746DBB-4DB8-4A14-9B88-13EBBA1554C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contas.Domain.Core", "src\Contas.Domain.Core\Contas.Domain.Core.csproj", "{87BAE211-B025-4D7E-A940-88C4D358DB40}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contas.Infrastructure.Data", "src\Contas.Infrastructure.Data\Contas.Infrastructure.Data.csproj", "{A2E3E2B9-4AE4-4D74-AAAC-CEF4783AE887}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contas.Infrastructure.CrossCutting.IoC", "src\Contas.Infrastructure.CrossCutting.IoC\Contas.Infrastructure.CrossCutting.IoC.csproj", "{273B13A1-56A0-4892-8C7E-CC45042EA801}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contas.Infrastructure.CrossCutting.Identity", "src\Contas.Infrastructure.CrossCutting.Identity\Contas.Infrastructure.CrossCutting.Identity.csproj", "{C4D1E2D9-5ABF-435D-8AC4-18C57812DE76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contas.Infrastructure.CrossCutting.AspNetFilters", "src\Contas.Infrastructure.CrossCutting.AspNetFilters\Contas.Infrastructure.CrossCutting.AspNetFilters.csproj", "{F41871B0-8E1F-4CBD-BCA9-B0057F87903D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contas.Services.Api", "src\Contas.Services.Api\Contas.Services.Api.csproj", "{0A3D3173-2C82-4C50-8521-5707D1AC4C28}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{33746DBB-4DB8-4A14-9B88-13EBBA1554C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33746DBB-4DB8-4A14-9B88-13EBBA1554C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33746DBB-4DB8-4A14-9B88-13EBBA1554C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33746DBB-4DB8-4A14-9B88-13EBBA1554C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87BAE211-B025-4D7E-A940-88C4D358DB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87BAE211-B025-4D7E-A940-88C4D358DB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87BAE211-B025-4D7E-A940-88C4D358DB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87BAE211-B025-4D7E-A940-88C4D358DB40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E3E2B9-4AE4-4D74-AAAC-CEF4783AE887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E3E2B9-4AE4-4D74-AAAC-CEF4783AE887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E3E2B9-4AE4-4D74-AAAC-CEF4783AE887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E3E2B9-4AE4-4D74-AAAC-CEF4783AE887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273B13A1-56A0-4892-8C7E-CC45042EA801}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273B13A1-56A0-4892-8C7E-CC45042EA801}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273B13A1-56A0-4892-8C7E-CC45042EA801}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273B13A1-56A0-4892-8C7E-CC45042EA801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D1E2D9-5ABF-435D-8AC4-18C57812DE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D1E2D9-5ABF-435D-8AC4-18C57812DE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D1E2D9-5ABF-435D-8AC4-18C57812DE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D1E2D9-5ABF-435D-8AC4-18C57812DE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F41871B0-8E1F-4CBD-BCA9-B0057F87903D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F41871B0-8E1F-4CBD-BCA9-B0057F87903D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F41871B0-8E1F-4CBD-BCA9-B0057F87903D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F41871B0-8E1F-4CBD-BCA9-B0057F87903D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A3D3173-2C82-4C50-8521-5707D1AC4C28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3D3173-2C82-4C50-8521-5707D1AC4C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3D3173-2C82-4C50-8521-5707D1AC4C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3D3173-2C82-4C50-8521-5707D1AC4C28}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B8114060-233A-4D65-BDE5-EEDEEB66713D} = {91EA6C26-CBD5-4B75-8B2C-02FD819DB47F}
+		{30770071-14EE-4DAB-9E5F-D3EA3628F8BC} = {91EA6C26-CBD5-4B75-8B2C-02FD819DB47F}
+		{33746DBB-4DB8-4A14-9B88-13EBBA1554C9} = {65D58EC0-2FF5-444F-9651-7A0FFBCDEFC3}
+		{87BAE211-B025-4D7E-A940-88C4D358DB40} = {65D58EC0-2FF5-444F-9651-7A0FFBCDEFC3}
+		{A2E3E2B9-4AE4-4D74-AAAC-CEF4783AE887} = {B8114060-233A-4D65-BDE5-EEDEEB66713D}
+		{273B13A1-56A0-4892-8C7E-CC45042EA801} = {30770071-14EE-4DAB-9E5F-D3EA3628F8BC}
+		{C4D1E2D9-5ABF-435D-8AC4-18C57812DE76} = {30770071-14EE-4DAB-9E5F-D3EA3628F8BC}
+		{F41871B0-8E1F-4CBD-BCA9-B0057F87903D} = {30770071-14EE-4DAB-9E5F-D3EA3628F8BC}
+		{0A3D3173-2C82-4C50-8521-5707D1AC4C28} = {5A44D4D2-7EC5-40C4-BE27-82C2975F0BA4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F05254E-2619-4379-8D09-7DDFF0706945}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>ContasSecrets</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
+    <PackageReference Include="Elmah.Io.AspNetCore" Version="3.5.54" />
+    <PackageReference Include="Elmah.Io.Extensions.Logging" Version="3.2.27" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" />
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.1" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Contas.Application\Contas.Application.csproj" />
+    <ProjectReference Include="..\Contas.Infrastructure.CrossCutting.AspNetFilters\Contas.Infrastructure.CrossCutting.AspNetFilters.csproj" />
+    <ProjectReference Include="..\Contas.Infrastructure.CrossCutting.Identity\Contas.Infrastructure.CrossCutting.Identity.csproj" />
+    <ProjectReference Include="..\Contas.Infrastructure.CrossCutting.IoC\Contas.Infrastructure.CrossCutting.IoC.csproj" />
+  </ItemGroup>
+
+</Project>

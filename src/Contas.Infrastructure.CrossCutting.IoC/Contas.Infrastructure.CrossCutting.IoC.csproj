@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Contas.Domain\Contas.Domain.csproj" />
+    <ProjectReference Include="..\Contas.Infrastructure.CrossCutting.AspNetFilters\Contas.Infrastructure.CrossCutting.AspNetFilters.csproj" />
+    <ProjectReference Include="..\Contas.Infrastructure.CrossCutting.Identity\Contas.Infrastructure.CrossCutting.Identity.csproj" />
+    <ProjectReference Include="..\Contas.Infrastructure.Data\Contas.Infrastructure.Data.csproj" />
+  </ItemGroup>
+
+</Project>

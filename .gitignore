@@ -4,7 +4,6 @@ Properties/
 
 # Use git add -f to force override .sln when required. Not needed in most cases.
 # git add -f myProj.sln
-*.sln
 
 Project_Readme.html
 
@@ -139,7 +138,7 @@ publish/
 # Publish Web Output
 *.[Pp]ublish.xml
 *.azurePubxml
-# TODO: Comment the next line if you want to checkin your web deploy settings 
+# TODO: Comment the next line if you want to checkin your web deploy settings
 # but database connection strings (with potential passwords) will be unencrypted
 *.pubxml
 *.publishproj
@@ -210,7 +209,7 @@ project.lock.json
 **/samples/**/wwwroot/lib/
 __pycache__/
 
-#Mac OSX 
+#Mac OSX
 .DS_Store
 
 # Windows thumbnail cache files
