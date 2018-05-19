@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Contas.Services.Api.Utils.ValidationUtils;
+using System;
 using System.ComponentModel.DataAnnotations;
-using Contas.Services.Api.Utils.ValidationUtils;
 
 namespace Contas.Services.Api.ViewModels
 {

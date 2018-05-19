@@ -4,11 +4,11 @@ using Contas.Domain.Contas.Repository;
 using Contas.Domain.Contracts;
 using Contas.Domain.Core.Notifications;
 using Contas.Services.Api.ViewModels;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using MediatR;
 
 namespace Contas.Services.Api.Controllers
 {

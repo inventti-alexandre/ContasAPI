@@ -1,4 +1,5 @@
 ﻿using Contas.Infrastructure.CrossCutting.Identity.Authorization;
+using Contas.Infrastructure.CrossCutting.Identity.Context;
 using Contas.Infrastructure.CrossCutting.Identity.Models;
 using Elmah.Io.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -8,9 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using System;
-using System.Text;
-using Contas.Infrastructure.CrossCutting.Identity.Context;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Contas.Services.Api.Configurations
 {
