@@ -45,7 +45,7 @@ namespace Contas.Services.Api
             });
 
             services.AddApiVersioning("api/v{version}");
-            services.AddAutoMapper();
+            services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerConfig();
             services.AddMediatR(typeof(Startup));
             services.AddDIConfiguration();

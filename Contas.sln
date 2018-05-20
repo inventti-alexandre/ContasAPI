@@ -27,6 +27,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contas.Infrastructure.Cross
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contas.Services.Api", "src\Contas.Services.Api\Contas.Services.Api.csproj", "{0A3D3173-2C82-4C50-8521-5707D1AC4C28}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Tests", "4 - Tests", "{1CF9643E-94DD-4E9A-A5EC-6834EE06A6B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contas.Tests.Api", "tests\Contas.Tests.Api\Contas.Tests.Api.csproj", "{5BF4C6A1-E763-4E2E-9DB2-468B9AE04AED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +65,10 @@ Global
 		{0A3D3173-2C82-4C50-8521-5707D1AC4C28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A3D3173-2C82-4C50-8521-5707D1AC4C28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A3D3173-2C82-4C50-8521-5707D1AC4C28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BF4C6A1-E763-4E2E-9DB2-468B9AE04AED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BF4C6A1-E763-4E2E-9DB2-468B9AE04AED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BF4C6A1-E763-4E2E-9DB2-468B9AE04AED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BF4C6A1-E763-4E2E-9DB2-468B9AE04AED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +83,7 @@ Global
 		{C4D1E2D9-5ABF-435D-8AC4-18C57812DE76} = {30770071-14EE-4DAB-9E5F-D3EA3628F8BC}
 		{F41871B0-8E1F-4CBD-BCA9-B0057F87903D} = {30770071-14EE-4DAB-9E5F-D3EA3628F8BC}
 		{0A3D3173-2C82-4C50-8521-5707D1AC4C28} = {5A44D4D2-7EC5-40C4-BE27-82C2975F0BA4}
+		{5BF4C6A1-E763-4E2E-9DB2-468B9AE04AED} = {1CF9643E-94DD-4E9A-A5EC-6834EE06A6B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5F05254E-2619-4379-8D09-7DDFF0706945}
