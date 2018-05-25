@@ -56,8 +56,8 @@ namespace Contas.Services.Api.Configurations
 
             services.AddElmahIo(opt =>
             {
-                opt.ApiKey = "83ea1721458d44a396e6e00612212252";
-                opt.LogId = new Guid("8a070c6a-457c-44c9-9e8b-dbee32a753e9");
+                opt.ApiKey = configuration.GetValue<string>("ElmahConfiguration:ApiKey");
+                opt.LogId = new Guid(configuration.GetValue<string>("ElmahConfiguration:LogId"));
             });
         }
     }

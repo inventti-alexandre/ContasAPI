@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  contas.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "64999:64999"

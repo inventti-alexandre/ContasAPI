@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  contas.api:
+    image: contas.api
+    build:
+      context: .
+      dockerfile: src/Contas.Services.Api/Dockerfile

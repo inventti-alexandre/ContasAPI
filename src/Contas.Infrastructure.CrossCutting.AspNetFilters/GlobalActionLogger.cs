@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +25,8 @@ namespace Contas.Infrastructure.CrossCutting.AspNetFilters
 
         public async void OnActionExecuted(ActionExecutedContext context)
         {
+            var config = new ConfigurationBuilder().SetBasePath(_hostingEnviroment.ContentRootPath).AddJsonFile("appsettings.json", optional: false, reloadOnChange: true).AddJsonFile($"appsettings.{_hostingEnviroment.EnvironmentName}.json", optional: true).Build();
+
             if (_hostingEnviroment.IsDevelopment())
             {
                 var data = new
@@ -62,9 +64,8 @@ namespace Contas.Infrastructure.CrossCutting.AspNetFilters
                     //Detail = JsonConvert.SerializeObject(new { DadoExtra = "Dados a mais", DadoInfo = "Pode ser um Json" })
                 };
 
-
-                var client = ElmahioAPI.Create("83ea1721458d44a396e6e00612212252");
-                await client.Messages.CreateAndNotifyAsync(new Guid("8a070c6a-457c-44c9-9e8b-dbee32a753e9"), message);
+                var client = ElmahioAPI.Create(config.GetSection("ElmahConfiguration:ApiKey").Value);
+                await client.Messages.CreateAndNotifyAsync(new Guid(config.GetSection("ElmahConfiguration:LogId").Value), message);
             }
         }
 
