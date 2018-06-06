@@ -72,7 +72,7 @@ namespace Contas.Services.Api.Controllers
         }
 
         [HttpDelete]
-        [Route("contas")]
+        [Route("contas/{id:guid}")]
         [Authorize(Policy = "PodeAlterar")]
         public IActionResult Delete(Guid id)
         {
