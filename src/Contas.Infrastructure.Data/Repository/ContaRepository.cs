@@ -18,8 +18,12 @@ namespace Contas.Infrastructure.Data.Repository
 
         public override Conta ObterPorId(Guid id)
         {
-            var sql = "SELECT * FROM CONTAS WHERE ID = @id";
-            var conta = Db.Database.GetDbConnection().Query<Conta>(sql, new {id = id});
+            var sql = "SELECT * FROM  Contas c JOIN Categorias ca ON ca.Id = c.IdCategoria WHERE c.Id = @uid";
+            var conta = Db.Database.GetDbConnection().Query<Conta, Categoria, Conta>(sql, (c, cat) =>
+            {
+                c.AtribuirCategoria(cat);
+                return c;
+            }, new { uid = id });
             return conta.FirstOrDefault();
         }
 
