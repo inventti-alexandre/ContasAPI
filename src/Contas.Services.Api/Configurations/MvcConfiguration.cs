@@ -22,6 +22,7 @@ namespace Contas.Services.Api.Configurations
             new ConfigureFromConfigurationOptions<TokenDescriptor>(configuration.GetSection("JwtOptions")).Configure(tokenConfigurations);
             services.AddSingleton(tokenConfigurations);
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+            services.AddCors();
 
             services.AddAuthentication(options =>
             {
