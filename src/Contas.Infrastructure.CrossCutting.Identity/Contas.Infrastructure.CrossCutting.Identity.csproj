@@ -23,11 +23,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Contas.Domain\Contas.Domain.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="AutoMapper">
-      <HintPath>..\..\..\..\Users\Lucas Vasconcelos\.nuget\packages\automapper\6.2.2\lib\netstandard1.3\AutoMapper.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>
