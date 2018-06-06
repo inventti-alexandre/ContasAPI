@@ -50,7 +50,7 @@ namespace Contas.Services.Api.Controllers
         }
 
         [HttpPost]
-        [Route("contas/nova")]
+        [Route("contas")]
         [Authorize(Policy = "PodeAlterar")]
         public IActionResult Post([FromBody]ContaViewModel contaViewModel)
         {
@@ -61,7 +61,7 @@ namespace Contas.Services.Api.Controllers
         }
 
         [HttpPut]
-        [Route("contas/{id:guid}")]
+        [Route("contas")]
         [Authorize(Policy = "PodeAlterar")]
         public IActionResult Put(Guid id, [FromBody] ContaViewModel contaViewModel)
         {
@@ -72,7 +72,7 @@ namespace Contas.Services.Api.Controllers
         }
 
         [HttpDelete]
-        [Route("contas/{id:guid}")]
+        [Route("contas")]
         [Authorize(Policy = "PodeAlterar")]
         public IActionResult Delete(Guid id)
         {
