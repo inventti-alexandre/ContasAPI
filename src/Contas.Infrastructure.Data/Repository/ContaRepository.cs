@@ -50,5 +50,11 @@ namespace Contas.Infrastructure.Data.Repository
             conta.DesativarConta();
             Atualizar(conta);
         }
+
+        public DateTime ObterDataMaisAntiga()
+        {
+            var sql = "SELECT MIN(Data) AS data FROM Contas WHERE Desativado = 0;";
+            return Db.Database.GetDbConnection().Query<DateTime>(sql).FirstOrDefault();
+        }
     }
 }

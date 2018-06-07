@@ -49,6 +49,14 @@ namespace Contas.Services.Api.Controllers
             return _mapper.Map<IEnumerable<CategoriaViewModel>>(_contaRepository.ObterCategorias());
         }
 
+        [HttpGet]
+        [Route("contas/data-mais-antiga")]
+        [Authorize(Policy = "PodeVisualizar")]
+        public DateTime ObterDataMaisAntiga()
+        {
+            return _contaRepository.ObterDataMaisAntiga();
+        }
+
         [HttpPost]
         [Route("contas")]
         [Authorize(Policy = "PodeAlterar")]
