@@ -8,6 +8,6 @@ namespace Contas.Domain.Contas.Repository
     {
         IEnumerable<Conta> ObterContasPorUsuario(Guid id);
         IEnumerable<Categoria> ObterCategorias();
-        DateTime ObterDataMaisAntiga();
+        DateTime? ObterDataMaisAntiga();
     }
 }

@@ -52,7 +52,7 @@ namespace Contas.Services.Api.Controllers
         [HttpGet]
         [Route("contas/data-mais-antiga")]
         [Authorize(Policy = "PodeVisualizar")]
-        public DateTime ObterDataMaisAntiga()
+        public DateTime? ObterDataMaisAntiga()
         {
             return _contaRepository.ObterDataMaisAntiga();
         }
