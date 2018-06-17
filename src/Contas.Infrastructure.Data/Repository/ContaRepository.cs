@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Contas.Domain.Contas;
+﻿using Contas.Domain.Contas;
 using Contas.Domain.Contas.Repository;
-using Contas.Domain.Usuarios;
 using Contas.Infrastructure.Data.Context;
 using Dapper;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Contas.Infrastructure.Data.Repository
 {
@@ -27,15 +26,14 @@ namespace Contas.Infrastructure.Data.Repository
             return conta.FirstOrDefault();
         }
 
-        public IEnumerable<Conta> ObterContasPorUsuario(Guid id)
+        public IEnumerable<Conta> ObterContasPorUsuario(Guid id, DateTime? data, string key)
         {
-            var sql = "SELECT * FROM  Contas c JOIN Categorias ca ON ca.Id = c.IdCategoria WHERE c.Desativado = 0 AND MONTH(c.Data) = MONTH(GETDATE()) AND YEAR(c.Data) = YEAR(GETDATE()) AND C.IdUsuario = @uid ORDER BY DATA DESC";
-            var contas = Db.Database.GetDbConnection().Query<Conta, Categoria, Conta>(sql, (conta, categoria) =>
-            {
-                conta.AtribuirCategoria(categoria);
-                return conta;
-            }, new { uid = id });
-            return contas;
+            var query = DbSet.Where(c => c.IdUsuario == id).Join(Db.Categoria, conta => conta.IdCategoria, categoria => categoria.Id, (conta, categoria) => Conta.ContaFactory.AtribuirCategoria(conta, categoria));
+            
+            if (data != null) query = query.Where(c => c.Data.Year == data.Value.Year && c.Data.Month == data.Value.Month);
+            if (key != null) query = query.Where(c => c.Nome.ToLower().Contains(key.ToLower()));
+
+            return query.ToList();
         }
 
         public IEnumerable<Categoria> ObterCategorias()
@@ -49,6 +47,12 @@ namespace Contas.Infrastructure.Data.Repository
             var conta = ObterPorId(id);
             conta.DesativarConta();
             Atualizar(conta);
+        }
+
+        public DateTime? ObterDataMaisAntiga()
+        {
+            var sql = "SELECT MIN(Data) AS data FROM Contas WHERE Desativado = 0;";
+            return Db.Database.GetDbConnection().Query<DateTime?>(sql).FirstOrDefault();
         }
     }
 }

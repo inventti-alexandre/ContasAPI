@@ -6,7 +6,8 @@ namespace Contas.Domain.Contas.Repository
 {
     public interface IContaRepository : IRepository<Conta>
     {
-        IEnumerable<Conta> ObterContasPorUsuario(Guid id);
+        IEnumerable<Conta> ObterContasPorUsuario(Guid id, DateTime? data, string key);
         IEnumerable<Categoria> ObterCategorias();
+        DateTime? ObterDataMaisAntiga();
     }
 }

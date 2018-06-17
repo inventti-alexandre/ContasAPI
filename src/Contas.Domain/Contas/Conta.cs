@@ -67,6 +67,12 @@ namespace Contas.Domain.Contas
 
                 return conta;
             }
+
+            public static Conta AtribuirCategoria(Conta conta, Categoria categoria)
+            {
+                conta.AtribuirCategoria(categoria);
+                return conta;
+            }
         }
     }
 }
