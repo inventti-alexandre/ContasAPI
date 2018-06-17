@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Contas.Services.Api.Controllers
 {
@@ -28,9 +29,9 @@ namespace Contas.Services.Api.Controllers
         [HttpGet]
         [Route("contas")]
         [Authorize(Policy = "PodeVisualizar")]
-        public IEnumerable<ContaViewModel> Get()
+        public IEnumerable<ContaViewModel> Get(DateTime? data, string key)
         {
-            return _mapper.Map<IEnumerable<ContaViewModel>>(_contaRepository.ObterContasPorUsuario(IdUsuario));
+            return _mapper.Map<IEnumerable<ContaViewModel>>(_contaRepository.ObterContasPorUsuario(IdUsuario, data, key));
         }
 
         [HttpGet]
