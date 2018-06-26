@@ -1,10 +1,12 @@
-﻿using Contas.Domain.Contracts;
+﻿using AutoMapper;
+using Contas.Domain.Contracts;
 using Contas.Domain.Core.Notifications;
 using Contas.Domain.Usuarios.Commands;
 using Contas.Domain.Usuarios.Repository;
 using Contas.Infrastructure.CrossCutting.Identity.Authorization;
 using Contas.Infrastructure.CrossCutting.Identity.Models;
 using Contas.Infrastructure.CrossCutting.Identity.Models.AccountViewModels;
+using Contas.Services.Api.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -12,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -27,10 +30,11 @@ namespace Contas.Services.Api.Controllers
         private readonly IUsuarioRepository _usuarioRepository;
         private readonly IMediatorHandler _mediator;
         private readonly TokenDescriptor _tokenDescriptor;
+        private readonly IMapper _mapper;
 
         private static long ToUnixEpochDate(DateTime date) => (long)Math.Round((date.ToUniversalTime() - new DateTimeOffset(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)).TotalSeconds);
 
-        public UsuariosController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ILoggerFactory loggerFactory, TokenDescriptor tokenDescriptor, INotificationHandler<DomainNotification> notifications, IUser user, IUsuarioRepository usuarioRepository, IMediatorHandler mediator) : base(notifications, user, mediator)
+        public UsuariosController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ILoggerFactory loggerFactory, TokenDescriptor tokenDescriptor, INotificationHandler<DomainNotification> notifications, IUser user, IUsuarioRepository usuarioRepository, IMediatorHandler mediator, IMapper mapper) : base(notifications, user, mediator)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -38,6 +42,7 @@ namespace Contas.Services.Api.Controllers
             _mediator = mediator;
             _logger = loggerFactory.CreateLogger<UsuariosController>();
             _tokenDescriptor = tokenDescriptor;
+            _mapper = mapper;
         }
 
         [HttpPost]
@@ -75,6 +80,14 @@ namespace Contas.Services.Api.Controllers
             }
             AdicionarErrosIdentity(result);
             return Response(model);
+        }
+
+        [HttpGet]
+        [Authorize(Policy = "PodeVisualizar")]
+        [Route("usuario/perfil")]
+        public UsuarioViewModel ObterPerfil()
+        {
+            return _mapper.Map<UsuarioViewModel>(_usuarioRepository.ObterPorId(IdUsuario));
         }
 
         [HttpPost]
